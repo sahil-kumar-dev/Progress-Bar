@@ -11,6 +11,7 @@ next.addEventListener('click', () => {
         counter = circles.length;
     }
     update();
+    changeState();
 });
 
 
@@ -20,6 +21,7 @@ prev.addEventListener('click', () => {
         counter = 1;
     }
     update();
+    changeState();
 });
 
 
@@ -40,3 +42,15 @@ function update() {
 
 }
 
+function changeState() {
+    if (counter === 1) {
+        prev.disabled = true;
+    }
+    else if (counter === 4) {
+        next.disabled = true;
+    }
+    else {
+        prev.disabled = false;
+        next.disabled = false;
+    }
+}
